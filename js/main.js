@@ -1,7 +1,7 @@
 var canvas = document.getElementById('stage');
 var ctx = canvas.getContext('2d');
 
-function draw() {
+function draw () {
   ctx.clearRect(0,0, canvas.width, canvas.height);
   drawBricks()
   drawBall();
@@ -10,7 +10,7 @@ function draw() {
   drawLives();
   collisionDetection();
 
-  if(y + dy < ballRadius) {
+  if (y + dy < ballRadius) {
     dy = -dy;
   }
   else if (y + dy > canvas.height-ballRadius) {
@@ -33,14 +33,14 @@ function draw() {
     }
   }
 
-  if(x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
+  if (x + dx > canvas.width-ballRadius || x + dx < ballRadius) {
     dx = -dx;
   }
 
-  if(rightPressed && paddleX < canvas.width-paddleWidth) {
+  if (rightPressed && paddleX < canvas.width-paddleWidth) {
     paddleX += 7;
   }
-  else if(leftPressed && paddleX > 0) {
+  else if (leftPressed && paddleX > 0) {
     paddleX -= 7;
   }
 
